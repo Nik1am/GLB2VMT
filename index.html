@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+        #controls {
+            margin: 0 auto;
+            width: fit-content;
+            height: fit-content;
+            background-color: #888;
+            padding: 1em;
+            border-radius: 1em;
+        }
+        /* HTML: <div class="loader"></div> */
+        .disabled {
+            display: none;
+        }
+    </style>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+          }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+    <script src="./jszip.min.js"></script>
+</head>
+<body>
+    <script type="module" src="/main.js"></script>
+    <div id="controls">
+        Materials path:
+        <input type="text" id="inp_override_path" value="models/author/modelname/">
+        <br>
+        <input type="file" id="file_picker">
+        <button id="btn_load">Convert</button>
+        <button id="btn_download" disabled>Download VMTs</button>
+        <div class="loader disabled" id="loader_icon">Loading...</div>
+    </div>
+</body>
+</html>
